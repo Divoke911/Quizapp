@@ -1,11 +1,25 @@
-import Quiz from "./components/Quiz";
+import { useState } from "react";
+import LoginContainer from "./containers/LoginContainer";
+import RegisterContainer from "./containers/RegisterContainer";
+import Quiz from "./containers/Quiz";
+import "./styles/style.css";
 
 function App() {
-  return (
-    <div>
-      <h1>React Quiz App</h1>
-      <Quiz />
-    </div>
+  const [user, setUser] = useState(null);
+  const [isRegistering, setIsRegistering] = useState(false);
+
+  if (user) return <Quiz />;
+
+  return isRegistering ? (
+    <RegisterContainer
+      onRegister={setUser}
+      goToLogin={() => setIsRegistering(false)}
+    />
+  ) : (
+    <LoginContainer
+      onLogin={setUser}
+      goToRegister={() => setIsRegistering(true)}
+    />
   );
 }
 
