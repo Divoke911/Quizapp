@@ -2,7 +2,6 @@ import { useState } from "react";
 import LoginContainer from "./containers/LoginContainer";
 import RegisterContainer from "./containers/RegisterContainer";
 import Quiz from "./containers/Quiz";
-import "./styles/style.css";
 
 function App() {
   const [user, setUser] = useState(null);
