@@ -17,7 +17,7 @@ export default function LoginForm({
           src={brainImage}
           alt="Brain Mascot"
           className="mascot-character"
-          style={{ width: '280px', height: 'auto' }}
+          style={{ width: '300px', height: 'auto' }}
         />
       
       </div>
@@ -38,6 +38,7 @@ export default function LoginForm({
             placeholder="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            autoComplete="username"
             className="auth-input"
             required
           />
@@ -50,6 +51,7 @@ export default function LoginForm({
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            autoComplete="current-password"
             className="auth-input"
             required
           />
